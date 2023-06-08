@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     # Map a step output to a job output
     outputs:
-      output1: ${{ toJson(steps.step1.outputs) }}
-      output2: ${{ toJson(steps.step2.outputs) }}
+      output1: ${{ steps.step1.outputs.test }}
+      output2: ${{ steps.step2.outputs.test }}
     steps:
       - id: step1
         run: echo "test=hello" >> "$GITHUB_OUTPUT"
